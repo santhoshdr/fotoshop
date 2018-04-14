@@ -35,6 +35,29 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
+<!--  below jars are required when we get error message as 
+Whitelabel Error Page
+This application has no explicit mapping for /error, so you are seeing this as a fallback.
+
+Sat Apr 14 10:28:25 IST 2018
+There was an unexpected error (type=Not Found, status=404).
+No message available 
+
+when request is sent in browser
+
+-->	
+			<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
