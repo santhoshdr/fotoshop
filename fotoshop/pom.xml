@@ -67,6 +67,7 @@ when request is sent in browser
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>fotoshop</finalName>
 	</build>
 
 
