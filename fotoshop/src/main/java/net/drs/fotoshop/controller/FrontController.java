@@ -13,10 +13,10 @@ public class FrontController {
 	@RequestMapping(value={"/","/home","/index"})
 	public ModelAndView index(){
 		ModelAndView mv = new ModelAndView("page");
-
 	/*	categoryService.getAllCategories();*/
-		
 		mv.addObject("title", "Home");
+		
+		System.out.println("taking you to home page....GRRRRRRRRRRRR");
 		mv.addObject("userClickedHome", true);
 		return mv;
 	}
