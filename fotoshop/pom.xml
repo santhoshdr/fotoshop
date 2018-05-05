@@ -65,6 +65,15 @@ when request is sent in browser
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+        <folders>
+            <folder>
+                /webapp/WEB-INF
+            </folder>
+        </folders>
+    </configuration>
+				
+				
 			</plugin>
 		</plugins>
 		<finalName>fotoshop</finalName>
