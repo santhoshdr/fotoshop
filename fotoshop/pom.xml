@@ -58,6 +58,23 @@ when request is sent in browser
 			<artifactId>jstl</artifactId>
 		</dependency>
 		
+		
+		<!-- linking back end project -->
+		   <dependency>
+    <groupId>net.drs</groupId>
+	   <artifactId>fotoshopbackend</artifactId>
+  	   <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+	
+	
+	<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>1.4.197</version><!--$NO-MVN-MAN-VER$-->
+    <scope>runtime</scope>
+</dependency>
+
+	
 	</dependencies>
 
 	<build>
