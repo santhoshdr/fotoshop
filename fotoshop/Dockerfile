@@ -1,4 +1,4 @@
 FROM openjdk:8
-ADD target/fotoshop.jar fotoshop.jar
+ADD target/fotoshop.war target/fotoshop.war
 EXPOSE 8085
-ENTRYPOINT ["java","-jar", "fotoshop.jar"]
+ENTRYPOINT ["java","-jar", "target/fotoshop.war"]
