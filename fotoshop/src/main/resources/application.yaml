@@ -1,0 +1,40 @@
+spring:
+  profiles: dev
+  
+
+
+server:
+     port: 8085
+
+
+spring:
+    mvc:
+     -view.prefix: /WEB-INF/jsp/
+     -view.suffix: .jsp
+     -static-path-pattern: /resources/**
+    
+    datasource.url:  jdbc:h2:tcp://localhost/~/fotoshop
+    datasource.username: fotoshop
+    datasource.password:
+    datasource.driver-class-name: org.h2.Driver
+
+
+
+---
+
+spring:
+  profiles: prd
+  
+server:
+     port: 8085
+
+spring:
+    mvc:
+     -view.prefix: /WEB-INF/jsp/
+     -view.suffix: .jsp
+     -static-path-pattern: /resources/**
+    
+    datasource.url:  jdbc:h2:tcp://localhost/~/fotoshop
+    datasource.username: fotoshop
+    datasource.password:
+    datasource.driver-class-name: org.h2.Driver
