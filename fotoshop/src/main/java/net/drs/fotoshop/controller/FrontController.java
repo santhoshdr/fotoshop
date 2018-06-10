@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-public class FrontController {
+public class FrontController extends BaseController{
 	
 	@RequestMapping(value={"/","/home","/index"})
 	public ModelAndView index(){
@@ -56,5 +56,7 @@ public class FrontController {
 		return mv;
 	}
 
+	
+	
 
 }
