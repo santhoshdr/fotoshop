@@ -102,7 +102,15 @@ public class User  implements Serializable{
 		this.confirmPassword = confirmPassword;
 	}
 
-    @Column(name="firstName")
+    public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	@Column(name="firstName")
 	private String firstName;
 	
 	private String lastName;
@@ -113,7 +121,7 @@ public class User  implements Serializable{
 	
 	private String address;
 	
-	private boolean isActive=true;
+	private boolean isActive=false;
 	
 	private Date dateOfCreation;
 	

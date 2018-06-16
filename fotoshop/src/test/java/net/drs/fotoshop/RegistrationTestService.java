@@ -2,6 +2,8 @@ package net.drs.fotoshop;
 
 import static org.junit.Assert.assertEquals;
 import net.drs.fotoshop.api.userdetails.IRegistrationService;
+import net.drs.fotoshop.api.userdetails.ISendOTP;
+import net.drs.fotoshopbackend.api.emailNotification.ISendEmailNotification;
 import net.drs.fotoshopbackend.dao.IRegistrationDAO;
 import net.drs.fotoshopbackend.dto.User;
 
@@ -23,8 +25,13 @@ public class RegistrationTestService {
 	
 	
 	@Autowired
+	private static ISendOTP sendOTP;
+	
+	@Autowired
 	private static IRegistrationDAO registrationDAO;
 
+	
+	private static ISendEmailNotification sendEmailNotification;
 	
 	private User user;
 	
@@ -34,8 +41,9 @@ public class RegistrationTestService {
 		annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
 		annotationConfigApplicationContext.scan("net.drs.fotoshop.api","net.drs.fotoshopbackend");
 		annotationConfigApplicationContext.refresh();
-	
 		registrationService = (IRegistrationService)annotationConfigApplicationContext.getBean("registrationService");
+		sendEmailNotification = (ISendEmailNotification)annotationConfigApplicationContext.getBean("sendEmailNotification");
+		sendOTP = (ISendOTP)annotationConfigApplicationContext.getBean("sendOTP");
 	}
 	
 	@Test
@@ -44,7 +52,6 @@ public class RegistrationTestService {
 		java.util.Date uDate = new java.util.Date();
 
 		user = new User();
-		user.setActive(true);
 		user.setAddress("Bangalore");
 		user.setDateOfCreation(new java.sql.Date(uDate.getTime()));
 		user.setEmailAddress("abc@abc.com");
@@ -54,7 +61,15 @@ public class RegistrationTestService {
 		user.setPassword("Password");
 		user.setLastUpdated(new java.sql.Date(uDate.getTime()));				
 		
-		assertEquals("Success",true,registrationService.adduser(user));
+		boolean result =registrationService.adduser(user);
+		if(result){
+			sendEmailNotification.sendEmailNotification("sendEmailNotification", user);
+			
+			sendOTP.verifyOTPGenerate(user,5,5);	
+		}
+		
+		assertEquals("Success",true,result);
 	}
+	
 	
 }

@@ -19,8 +19,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	
 	@Override
 	public boolean adduser(User user) {
-		// Spring Injection list .. 
-		return registrationDAO.addUser(user);
+		return registrationDAO.addUser(user);	
 	}
 
 }
