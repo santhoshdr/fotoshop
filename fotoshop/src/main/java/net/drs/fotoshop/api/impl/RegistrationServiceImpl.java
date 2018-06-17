@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.drs.fotoshop.api.userdetails.IRegistrationService;
 import net.drs.fotoshopbackend.dao.IRegistrationDAO;
+import net.drs.fotoshopbackend.dto.Fotographer;
 import net.drs.fotoshopbackend.dto.User;
 
 
@@ -20,6 +21,12 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	@Override
 	public boolean adduser(User user) {
 		return registrationDAO.addUser(user);	
+	}
+
+	@Override
+	public boolean addFotographer(Fotographer fotographer) {
+		registrationDAO.addFotographer(fotographer);
+		return true;
 	}
 
 }

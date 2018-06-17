@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.drs.fotoshopbackend.dao.IRegistrationDAO;
 import net.drs.fotoshopbackend.dto.Category;
+import net.drs.fotoshopbackend.dto.Fotographer;
 import net.drs.fotoshopbackend.dto.User;
 
 
@@ -27,6 +28,13 @@ public class RegistrationDAOImpl  implements  IRegistrationDAO{
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	
+	
+	public boolean addFotographer(Fotographer fotographer) {
+		sessionFactory.getCurrentSession().save(fotographer);
+		return true;
 	}
 
 		
