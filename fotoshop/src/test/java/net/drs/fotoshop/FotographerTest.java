@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import net.drs.fotoshop.api.userdetails.IFotographerService;
 import net.drs.fotoshop.api.userdetails.IRegistrationService;
 import net.drs.fotoshop.api.userdetails.ISendOTP;
 import net.drs.fotoshopbackend.api.emailNotification.ISendEmailNotification;
@@ -38,6 +39,9 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 	
 	private User user;
 	
+	private static IFotographerService fotographerService;
+	
+	
 	
 	@BeforeClass
 	public static void init(){
@@ -48,6 +52,7 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 		registrationService = (IRegistrationService)annotationConfigApplicationContext.getBean("registrationService");
 		sendEmailNotification = (ISendEmailNotification)annotationConfigApplicationContext.getBean("sendEmailNotification");
 		sendOTP = (ISendOTP)annotationConfigApplicationContext.getBean("sendOTP");
+		fotographerService = (IFotographerService)annotationConfigApplicationContext.getBean("fotographerService");
 	}
 	
 	@Test
@@ -90,4 +95,14 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 	}
 	
 
+	
+	@Test
+	public void getFotographerDetails(){
+		
+		Fotographer fotographer = new Fotographer();
+		fotographer.setFotographerId(new Long(1));
+		
+		fotographer = fotographerService.getFotographer(fotographer);
+		
+	}
 }

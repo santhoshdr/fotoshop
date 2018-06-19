@@ -8,6 +8,7 @@ public interface IRegistrationService {
 	boolean adduser(User user);
 	
 	
+	
 	boolean addFotographer(Fotographer fotographer);
 	
 
