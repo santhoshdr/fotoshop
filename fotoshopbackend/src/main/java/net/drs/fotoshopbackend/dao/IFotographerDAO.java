@@ -14,6 +14,10 @@ public interface IFotographerDAO {
 	List<Fotographer> getAllFotographers();
 	
 	List<Fotographer> getAllActiveFotographers();
-
+	
+	boolean activateFotographer(Fotographer fotographer);
+	
+	boolean deactivateFotographer(Fotographer fotographer);
+	
 	
 }

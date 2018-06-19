@@ -1,5 +1,7 @@
 package net.drs.fotoshop.api.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,8 +27,24 @@ public class FotographerServiceImpl implements IFotographerService {
 
 	@Override
 	public boolean updateFotographer(Fotographer fotographer) {
-		// TODO Auto-generated method stub
+		fotographerDAO.updateFotographer(fotographer);
 		return false;
 	}
+
+	@Override
+	public boolean activateFotographer(Fotographer fotographer) {
+		return fotographerDAO.activateFotographer(fotographer);
+	}
+
+	@Override
+	public boolean deactivateFotographer(Fotographer fotographer) {
+		return fotographerDAO.deactivateFotographer(fotographer);
+	}
+
+	@Override
+	public List<Fotographer> getAllActiveFotographers() {
+		return fotographerDAO.getAllActiveFotographers();
+	}
+
 
 }

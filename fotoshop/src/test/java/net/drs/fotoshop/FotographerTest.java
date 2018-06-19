@@ -100,9 +100,51 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 	public void getFotographerDetails(){
 		
 		Fotographer fotographer = new Fotographer();
-		fotographer.setFotographerId(new Long(1));
+		fotographer.setFotographerId(new Long(2));
 		
-		fotographer = fotographerService.getFotographer(fotographer);
+		fotographer = fotographerService.getFotographerbyId(fotographer);
 		
 	}
+	
+	
+	/*@Test
+	public void deactivateFotographer(){
+		
+		Fotographer fotographer = new Fotographer();
+		fotographer.setFotographerId(new Long(2));
+		
+		boolean result = fotographerService.deactivateFotographer(fotographer);
+		
+	}*/
+	
+	
+	@Test
+	public void activateFotographer(){
+		
+		Fotographer fotographer = new Fotographer();
+		fotographer.setFotographerId(new Long(2));
+		
+		boolean result = fotographerService.activateFotographer(fotographer);
+		
+	}
+	
+	
+	@Test
+	public void updateFotographerDetails(){
+		
+		Fotographer fotographer = new Fotographer();
+		fotographer.setFotographerId(new Long(4));
+		
+		fotographer = fotographerService.getFotographerbyId(fotographer);
+		fotographer.setFirstName("FirstNameChanged");
+		
+		fotographerService.updateFotographer(fotographer);
+	}
+	
+	
+	@Test
+	public void getAllActiveFotograper(){
+		fotographerService.getAllActiveFotographers();
+	}
+	
 }
