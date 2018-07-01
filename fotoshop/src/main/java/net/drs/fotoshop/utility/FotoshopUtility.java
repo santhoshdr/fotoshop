@@ -6,7 +6,8 @@ public class FotoshopUtility {
 
 	
 	
-	private static java.sql.Date getCurrentDateandTime(java.util.Date uDate) {
+	public static java.sql.Date getCurrentDateandTime() {
+		java.util.Date uDate = new java.util.Date();
 		        java.sql.Date sDate = new java.sql.Date(uDate.getTime());
 		        return sDate;
 
@@ -36,7 +37,6 @@ public class FotoshopUtility {
 		
 		return result;
 	}
-	
-	}
-	
+
+}
 

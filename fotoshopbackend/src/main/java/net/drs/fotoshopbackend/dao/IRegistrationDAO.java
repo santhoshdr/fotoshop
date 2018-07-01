@@ -1,7 +1,5 @@
 package net.drs.fotoshopbackend.dao;
 
-import java.util.List;
-
 import net.drs.fotoshopbackend.dto.Fotographer;
 import net.drs.fotoshopbackend.dto.User;
 

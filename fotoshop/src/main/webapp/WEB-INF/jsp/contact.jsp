@@ -12,7 +12,7 @@
 										<div class="row" style="padding: 1%;" >
 											<div class="col-md-12" >
 												<div class="well well-sm" >
-													<form >
+													<form action="/guest/contact" method="POST">
 														<div class="row" >
 															<div class="col-md-12" >
 																<div class="form-group">
