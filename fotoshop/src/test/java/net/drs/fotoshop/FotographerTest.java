@@ -95,7 +95,7 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 	}
 	
 
-	
+/*	
 	@Test
 	public void getFotographerDetails(){
 		
@@ -107,7 +107,7 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 	}
 	
 	
-	/*@Test
+	@Test
 	public void deactivateFotographer(){
 		
 		Fotographer fotographer = new Fotographer();
@@ -115,7 +115,7 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 		
 		boolean result = fotographerService.deactivateFotographer(fotographer);
 		
-	}*/
+	}
 	
 	
 	@Test
@@ -146,5 +146,5 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 	public void getAllActiveFotograper(){
 		fotographerService.getAllActiveFotographers();
 	}
-	
+*/	
 }

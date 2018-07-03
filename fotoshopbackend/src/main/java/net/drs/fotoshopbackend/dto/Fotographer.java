@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -37,10 +38,15 @@ public class Fotographer {
     @JoinColumn(name="fotographerId")
 	private Set<Address> address;
 	
+	@Transient
+	
+	@OneToMany(mappedBy="comments")
+	private Set<Comments> comments;
+	
+	// add ratings later
 	public Fotographer() {
 
 	}
-
 
 	private boolean isactive = false;
 	
@@ -119,6 +125,15 @@ public class Fotographer {
 
 	public void setImage(String image) {
 		this.image = image;
-	}	
-	
+	}
+
+	public Set<Comments> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Comments> comments) {
+		this.comments = comments;
+	}
+
+
 }

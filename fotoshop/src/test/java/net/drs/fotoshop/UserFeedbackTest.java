@@ -29,7 +29,6 @@ private static AnnotationConfigApplicationContext annotationConfigApplicationCon
 		annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
 		annotationConfigApplicationContext.scan("net.drs.fotoshop.api","net.drs.fotoshopbackend");
 		annotationConfigApplicationContext.refresh();
-		
 		userFeedbackService = (IUserFeedbackService)annotationConfigApplicationContext.getBean("userFeedbackService");
 	}
 	
