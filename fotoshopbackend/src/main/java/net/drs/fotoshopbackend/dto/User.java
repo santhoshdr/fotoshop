@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import org.junit.Ignore;
-
 
 @Entity
 @Table(name = "user_detail")

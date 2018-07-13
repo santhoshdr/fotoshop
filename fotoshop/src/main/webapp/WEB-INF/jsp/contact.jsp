@@ -1,3 +1,8 @@
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+
 <link href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -12,15 +17,24 @@
 										<div class="row" style="padding: 1%;" >
 											<div class="col-md-12" >
 												<div class="well well-sm" >
-													<form action="/guest/contact" method="POST">
+												added comments code here....	
+												
+												<c:set var="contextRoot" value="${pageContext.request.contextPath}"></c:set>
+								***************<c:out value="${contextRoot}"></c:out>
+									<!--  	<sf:form class="form-horizontal" modelAttribute="comments" action="${contextRoot}/guest/contact" method="POST">  -->
+													
+													<form action="/guest/contact" method="POST"> 
 														<div class="row" >
 															<div class="col-md-12" >
-																<div class="form-group">
+																<div class="form-group">comments
+																
 																	<label for="name">
 																	Name of the Person</label>
 																	<div class="input-group">
 																		<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span> </span>
-																		<input type="text" class="form-control" id="name" placeholder="Name of the Person" required="required" />
+																		  <sf:input type="text" path="brand" id="name" placeholder="Name of the Person" class="form-control"/> 
+																		
+																	<!--	<input type="text" class="form-control" id="name" placeholder="Name of the Person" required="required" />--> 
 																	</div></div>
 																	<div class="form-group">
 																		<label for="email">
@@ -59,8 +73,8 @@
 																		Submit </button>
 																	</div>
 																</div>
-															</form>
-														</div>
+												<!--   		</sf:form>	-->
+</form> 														</div>
 													</div>
 
 												</div>

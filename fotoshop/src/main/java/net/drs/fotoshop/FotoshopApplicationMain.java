@@ -9,13 +9,13 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"net.drs.fotoshop.controller"})
-public class FotoshopApplication implements CommandLineRunner  {
+public class FotoshopApplicationMain implements CommandLineRunner  {
 
 	@Autowired
     private ServerProperties serverProperties;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(FotoshopApplication.class, args);
+		SpringApplication.run(FotoshopApplicationMain.class, args);
 	}
 
 	@Override
