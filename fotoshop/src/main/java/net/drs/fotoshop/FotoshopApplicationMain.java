@@ -3,12 +3,19 @@ package net.drs.fotoshop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"net.drs.fotoshop.controller"})
+// added the below @Enable... after i got the exception java.lang.ClassCastException: org.springframework.orm.jpa.EntityManagerHolder 
+// cannot be cast to org.springframework.orm.hibernate5.SessionHolder
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+@ComponentScan(basePackages = {"net.drs.fotoshop.controller","net.drs.fotoshop.restcontroller","net.drs.fotoshop.api","net.drs.fotoshopbackend"/* this is for rest controller */})
 public class FotoshopApplicationMain implements CommandLineRunner  {
 
 	@Autowired
@@ -23,4 +30,7 @@ public class FotoshopApplicationMain implements CommandLineRunner  {
 		System.out.println(serverProperties);
 		
 	}
+	
+	
+	
 }

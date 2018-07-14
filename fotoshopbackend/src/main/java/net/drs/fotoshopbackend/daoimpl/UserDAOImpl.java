@@ -31,8 +31,7 @@ public class UserDAOImpl implements IUserDAO {
 		return query.getResultList();
 	}
 
-	public User getUser(Long userId) 
-	{
+	public User getUser(Long userId){
 		// not working for 1 - need to check
 		return (User) sessionFactory.getCurrentSession().get(User.class, userId);
 	}

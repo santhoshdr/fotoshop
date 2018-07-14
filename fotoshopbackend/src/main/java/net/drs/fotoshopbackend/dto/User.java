@@ -13,7 +13,7 @@ import javax.persistence.Transient;
 
 
 @Entity
-@Table(name = "user_detail")
+@Table(name = "userdetail")
 public class User  implements Serializable{
 	/**
 	 * 
@@ -119,7 +119,7 @@ public class User  implements Serializable{
 	
 	private String address;
 	
-	private boolean isActive=false;
+	private boolean isActive=true;
 	
 	private Date dateOfCreation;
 	
