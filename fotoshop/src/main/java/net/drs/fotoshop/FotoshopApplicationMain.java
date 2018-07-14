@@ -32,5 +32,6 @@ public class FotoshopApplicationMain implements CommandLineRunner  {
 	}
 	
 	
-	
+	//http://websystique.com/springmvc/spring-mvc-4-angularjs-example/
+	//http://websystique.com/springmvc/spring-mvc-4-restful-web-services-crud-example-resttemplate/
 }
