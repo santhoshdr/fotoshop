@@ -48,13 +48,12 @@ public class UserRestController {
 	@RequestMapping(value="/addUser", method=RequestMethod.POST)
 	//@PostMapping(value = "/addUser")
 	   public void addUser(@RequestBody User user) {
-		try{
-			registrationService.adduser(user);
-	   }catch(Exception e){
-		   new ResponseEntity(new CustomErrorType("Unable to handle the request.."), HttpStatus.NOT_FOUND);
-	   }
-		
-	}
+			try{
+				registrationService.adduser(user);
+		   }catch(Exception e){
+			   new ResponseEntity(new CustomErrorType("Unable to handle the request.."), HttpStatus.NOT_FOUND);
+		   }
+	   }	
 		
 		// Get All Users
 		//@PostMapping(value = "/getAllUsers") can also be used
@@ -69,7 +68,8 @@ public class UserRestController {
 		  return new ResponseEntity<List<User>>(user, HttpStatus.OK);
 		}
 		
-		
+		//curl -H "Content-Type: application/json" -X PUT http://localhost:8085/user/deleteUser/5
+
 		@RequestMapping(value = "/deleteUser/{id}", method = RequestMethod.PUT)
 	    public ResponseEntity<List<User>> deleteUser(@PathVariable("id") long id) {
 	        List<User> user = null; 
